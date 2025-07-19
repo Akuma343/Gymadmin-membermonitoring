@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rage Members Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <img src="ragelogo.png" alt="Rage Logo" class="rage-logo" style="height: 56px; width: 56px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); background: #fff;" />
+        <div>
+          <h1>Rage Members Dashboard</h1>
+          <p>Manage members and track membership status</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <input type="text" id="search" placeholder="Search members...">
+        <button id="notification-btn">🔔<span class="badge">2</span></button>
+        <button id="add-member-btn">+ Add Member</button>
+      </div>
+    </header>
+
+    <!-- Stats Cards -->
+    <section class="stats-cards" id="stats-cards"></section>
+
+    <!-- Members Sections -->
+    <section id="members-sections"></section>
+  </div>
+  <div id="modal-bg" class="modal-bg" style="display:none;">
+    <div class="modal">
+      <h2>Add Member</h2>
+      <form id="add-member-form">
+        <input type="text" id="member-firstname" placeholder="First Name" required>
+        <input type="text" id="member-lastname" placeholder="Last Name" required>
+        <select id="member-type" required>
+          <option value="Regular">Regular</option>
+          <option value="Graveyard">Graveyard</option>
+          <option value="Student">Student</option>
+        </select>
+        <input type="email" id="member-email" placeholder="Email" required>
+        <input type="text" id="member-phone" placeholder="Phone" required>
+        <input type="date" id="member-registered" required>
+        <button type="submit">Add</button>
+        <button type="button" id="close-modal">Cancel</button>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Note Editing Modal -->
+  <div id="note-modal-bg" class="modal-bg" style="display:none;">
+    <div class="modal">
+      <h2>Edit Notes</h2>
+      <form id="edit-notes-form">
+        <div class="note-member-info">
+          <span id="note-member-name"></span>
+        </div>
+        <textarea id="member-notes" placeholder="Enter notes for this member..." rows="4"></textarea>
+        <div class="modal-buttons">
+          <button type="submit">Save</button>
+          <button type="button" id="close-note-modal">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="dashboard.js"></script>
+</body>
+</html>
